@@ -39,13 +39,13 @@ const products = [
     {
       id: 5,
       "name": "Product 5",
-      img: "../public/img/tshirt-white-2.jpg",
+      img: "/img/tshirt-white-2.jpg",
       "price":"₹549"
     },
     {
       id: 6,
       "name": "Product 6",
-      img: "../public/img/hoodie-pink.jpg",
+      img: "/img/hoodie-pink.jpg",
       "price":"₹449"
     }
 ]
@@ -53,7 +53,7 @@ const products = [
 
 function App(){
   const [cart, setCart] = useState([])
-  
+
   return (
     <>
     <Navbar />
