@@ -56,4 +56,9 @@
 .empty{
     color: black;
     font-size: 25px;
+    font-size: 25px;
+}
+
+.details p button{
+    margin: 0 10px;
 }

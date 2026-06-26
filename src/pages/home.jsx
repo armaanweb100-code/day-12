@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import  CartContext  from '.././context/context.jsx'
 
 export default function Home(){
     const {cart, setCart} = useContext(CartContext)
+    const [quantity, setQuantity] = useState({1: 0, 2: 0,3: 0,4: 0,5: 0, 6: 0});
     const products = [
         {
         id: 1,
@@ -52,28 +53,55 @@ export default function Home(){
         <div className="container">
 
             {products.map(prod => {
-                function addToCart(){
-                    const exists = cart.find(item => item.id === prod.id);
-                
+                function addToCart() {
+
+                        if (quantity[prod.id] === 0) {
+                            return;
+                        }
+
+                        const exists = cart.find(item => item.id === prod.id);
+
                         if (exists) {
+
                             setCart(
                                 cart.map(item => {
                                     if (item.id === prod.id) {
-                                        return {...item, quantity: item.quantity + 1};
-                                    }   
-                
+                                        return {
+                                            ...item,
+                                            quantity: item.quantity + quantity[prod.id]
+                                        };
+                                    }
+
                                     return item;
                                 })
                             );
+
                         } else {
-                            setCart([...cart,{...prod,quantity: 1}]);
+
+                            setCart([
+                                ...cart,
+                                {
+                                    ...prod,
+                                    quantity: quantity[prod.id]
+                                }
+                            ]);
+
                         }
-                }
+
+                        setQuantity({
+                            ...quantity,
+                            [prod.id]: 0
+                        });
+                    }
                 return(
                     <div className="card" key={prod.id}>
                         <img src={prod.img} alt={prod.name}></img>
                         <h3>{prod.name}</h3>
                         <p>{prod.price}</p>
+                        <p>Quantity:<button onClick={() =>setQuantity({ ...quantity, [prod.id]: quantity[prod.id] > 0 ? quantity[prod.id] - 1 : 0})}>-</button>
+                            {quantity[prod.id]}
+                        <button onClick={() => setQuantity({...quantity, [prod.id]: quantity[prod.id] + 1})}> + </button>
+                        </p>
                         <button onClick={addToCart}>Add to Cart</button>
                     </div>
                 )
