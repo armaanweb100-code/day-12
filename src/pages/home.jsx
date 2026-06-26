@@ -1,4 +1,8 @@
-export default function Home({setCart, cart}){
+import { useContext } from "react";
+import  CartContext  from '.././context/context.jsx'
+
+export default function Home(){
+    const {cart, setCart} = useContext(CartContext)
     const products = [
         {
         id: 1,

@@ -1,4 +1,8 @@
-export default function Tech({cart, setCart}){
+import { useContext } from "react";
+import  CartContext  from '../.././context/context.jsx'
+
+export default function Tech(){
+    const {cart, setCart} = useContext(CartContext)
     const products = [
         {
         id: 201,

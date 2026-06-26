@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import {Routes, Route} from "react-router-dom"
 
 //pages
@@ -14,24 +14,21 @@ import './css/cart.css'
 import './css/nav.css'
 
 //context
-import CartContext from './context/context.js'
-import {cartState} from './context/context.js'
+import { CartProvider } from './context/context.jsx'
 
 function App(){
-  const [cart, setCart] = useState([]);
-
 
   return (
     <>
-    <Navbar cart={cart}/>
-    <cartState.Provider value={cartState}>
+    <CartProvider>
+    <Navbar />
       <Routes>
-        <Route path="/" element={<Home setCart={setCart} cart={cart} />} />
-        <Route path="/cart"  element={<Cartpage cart={cart} setCart={setCart} />} />
-        <Route path="/beauty"  element={<Beauty cart={cart} setCart={setCart}/> }/>
-        <Route path="/tech" element={<Tech cart={cart} setCart={setCart}/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart"  element={<Cartpage />} />
+        <Route path="/beauty"  element={<Beauty /> }/>
+        <Route path="/tech" element={<Tech />}/>
       </Routes>
-    </cartState.Provider>
+    </CartProvider>
     </>
   )
 }

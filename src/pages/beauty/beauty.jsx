@@ -1,10 +1,14 @@
-export default function Beauty({cart, setCart}){
+import { useContext } from "react";
+import  CartContext  from '../.././context/context.jsx'
+
+export default function Beauty(){
+    const {cart, setCart} = useContext(CartContext)
      const products = [
         {
         id: 101,
         "name": "Product 1",
         img: "/img/beauty/p1.jpg",
-        "price":"4599",
+        "price":"₹4599",
         quantity: 0
         },
         {

@@ -1,9 +1,12 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import  CartContext  from '.././context/context.jsx'
+import { Link } from 'react-router-dom'
 
-export default function Navbar({ cart }) {
+export default function Navbar() {
+    const {cart, setCart} = useContext(CartContext)
     return (
         <nav className="navbar">
-            <h2>Armaan-Store</h2>
+            <h2>Armaan Store</h2>
 
             <div className="nav-links">
                 <Link to="/">Home</Link>

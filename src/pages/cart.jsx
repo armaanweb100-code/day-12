@@ -1,4 +1,8 @@
-export default function Cartpage({cart, setCart}){
+import { useContext } from "react";
+import  CartContext  from '.././context/context.jsx'
+
+export default function Cartpage(){
+    const {cart, setCart} = useContext(CartContext)
     return (
         <>
 
