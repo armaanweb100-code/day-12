@@ -102,3 +102,55 @@ body{
     }
 
 }
+
+.darkmode{
+    background-color: black;
+}
+
+.darkmode footer{
+    background: rgb(24, 24, 24);
+}
+
+.darkmode footer a{
+    color: white;
+}
+
+.darkmode nav{
+    background:rgb(24, 24, 24);
+    color: white
+}
+
+.darkmode nav a, .darkmode nav h2{
+    color: white
+}
+
+.darkmode nav a:hover{
+    color: white;
+}
+
+.darkmode footer h3{
+    color: white;
+}
+
+/* cards */
+
+.darkmode .card{
+    background: #555;
+    border:1px solid #797979;
+
+}
+.darkmode .card h3{
+    color: white
+}
+.darkmode .card p{
+    color: white
+}
+.darkmode .card button{
+    background: rgb(46, 75, 161);
+}
+
+/* cart */
+.darkmode .cart-item{
+    background: #555;
+    border:1px solid #797979;
+}
