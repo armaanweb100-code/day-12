@@ -5,7 +5,7 @@ import {Routes, Route, useLocation} from "react-router-dom"
 import Cartpage from './pages/cart.jsx'
 import Home from './pages/home.jsx'
 import Navbar from './components/nav.jsx'
-import Footer from './components/Footer.jsx'
+import Footer from './components/footer.jsx'
 import Beauty from './pages/beauty/beauty.jsx'
 import Tech from './pages/tech/tech.jsx'
 
