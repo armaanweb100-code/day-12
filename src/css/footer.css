@@ -31,7 +31,6 @@ footer{
     font-size:18px;
 }
 
-/* Tablet */
 
 @media (max-width:768px){
 
@@ -45,7 +44,6 @@ footer{
 
 }
 
-/* Mobile */
 
 @media (max-width:480px){
 
